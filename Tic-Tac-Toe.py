@@ -1,9 +1,5 @@
 import numpy as np
 
-
-board = np.zeros((3,3))
-
-
 def next_move(board, r, c, p):
     assert board.shape == (3,3)
     assert r>=0 and r<=2 and c>=0 and c<=2
@@ -28,10 +24,8 @@ def win_condition(board):
     return False
 
 def play_game():
-    print("Input player 1's name: ")
-    p1 = input()
-    print("Input player 2's name: ")
-    p2 = input()
+    p1 = input("Input player 1's name: ")
+    p2 = input("Input player 2's name: ")
     if(p2==p1):
         p1+=" 1"
         p2+=" 2"
@@ -46,10 +40,8 @@ def play_game():
             print("\n\n------- " + p1 + "'s turn " + "-------\n\n")
         else:
             print("\n\n------- " + p2 + "'s turn " + "-------\n\n")
-        print("Input row: ")
-        r = int(input())
-        print("Input column: ")
-        c = int(input())
+        r = int(input("Input row: "))
+        c = int(input("Input column: "))
         if(not next_move(board,r,c,p)):
             print("-----!!!!! INVALID MOVE !!!!!-----")
         else:
